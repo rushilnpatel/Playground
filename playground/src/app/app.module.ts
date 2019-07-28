@@ -4,23 +4,23 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { materialModule } from './material.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule
+    materialModule
   ],
   providers: [],
-  exports: [MatButtonModule, MatCheckboxModule],
+  exports: [materialModule],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
