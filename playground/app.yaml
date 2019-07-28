@@ -1,9 +1,9 @@
 # [START runtime]
 runtime: nodejs10
 handlers:
-- url: http://rushilpatel.us
+- url: /http://rushilpatel.us
   static_files: dist/demo-app/index.html
   upload: dist/demo-app/index.html
-- url: http://rushilpatel.us
+- url: /http://rushilpatel.us
   static_dir: dist/demo-app
 # [END runtime]
