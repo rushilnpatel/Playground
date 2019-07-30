@@ -1,7 +1,7 @@
 runtime: nodejs10
 
 handlers:
-- url: /playground/dist/playground
+- url: /dist/playground
   static_dir: playground
 
 - url: /.*
