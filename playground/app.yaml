@@ -1,9 +1,10 @@
-# [START runtime]
 runtime: nodejs10
+
 handlers:
-- url: /http://rushilpatel.us
-  static_files: dist/playground/index.html
-  upload: dist/playground/index.html
-- url: /http://rushilpatel.us
-  static_dir: dist/playground
-# [END runtime]
+- url: /playground
+  static_dir: playground
+
+- url: /.*
+  secure: always
+  redirect_http_response_code: 301
+  script: auto
