@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SideNavComponent } from './side-nav/side-nav.component';
-import { materialModule } from './material.module';
+import { MaterialModule } from './material.module';
 
 
 @NgModule({
@@ -17,10 +17,10 @@ import { materialModule } from './material.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    materialModule
+    MaterialModule
   ],
   providers: [],
-  exports: [materialModule],
+  exports: [MaterialModule],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
