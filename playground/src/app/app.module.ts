@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { MaterialModule } from './material.module';
+import { AgGridModule } from 'ag-grid-angular';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MaterialModule } from './material.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AgGridModule.withComponents([])
   ],
   providers: [],
   exports: [MaterialModule],
