@@ -1,0 +1,12 @@
+@import "core";
+
+:host {
+  font-size: em(10);
+  //height: em(56, 10);
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $blue1;
+  padding: em($spacing-mobile * 2, 10) ;
+}

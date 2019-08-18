@@ -1,0 +1,30 @@
+<header class="calendar-header">
+  <h2 class="calendar-header-month-year">{{date | date:'MMM yyyy'}}</h2>
+  <div *ngIf="showNavigationButtons">
+    <button (click)="prevClick()"
+            [disabled]="isPrevButtonDisabled()">
+      <wfc-icon icon="icon-arrow-down"></wfc-icon>
+    </button>
+    <button (click)="nextClick()"
+            [disabled]="isNextButtonDisabled()">
+      <wfc-icon icon="icon-arrow-down"></wfc-icon>
+    </button>
+  </div>
+</header>
+<div class="calendar-content">
+  <ng-container *ngIf="showDaysOfWeek">
+    <div class="calendar-content-day-of-week"
+         *ngFor="let d of 7 | fill; let i = index;">{{addDayFromCurrentDate(i) | date:'EEEEE'}}</div>
+  </ng-container>
+  <ng-container *ngFor="let d of lengthOfMonth() | fill; let i = index;">
+    <div class="calendar-content-day calendar-content-day-not-in-month" *ngIf="showOtherMonthDays && isNotInMonth(i)">
+      {{addDayFromCurrentDate(i) | date:'d'}}
+    </div>
+    <div class="calendar-content-day" *ngIf="!showOtherMonthDays && isNotInMonth(i)"></div>
+    <button class="calendar-content-day {{className(i)}}" *ngIf="!isNotInMonth(i)"
+            [disabled]="isDateDisabled(i)"
+            (click)="handleDayClick(addDayFromCurrentDate(i))">{{addDayFromCurrentDate(i) | date:'d'}}</button>
+  </ng-container>
+</div>
+<a href="#" class="calendar-reset-button" *ngIf="getShowResetButton"
+   (click)="handleResetButtonClick($event)">{{resetButtonLabel}}</a>

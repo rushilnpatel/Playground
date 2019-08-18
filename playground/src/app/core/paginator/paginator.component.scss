@@ -1,0 +1,45 @@
+@import "core";
+
+:host {
+  font-size: em(12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+
+  &.hide {
+    display: none;
+  }
+
+  .button {
+    background: none;
+    border: none;
+    outline: none;
+    transform: rotate(-90deg);
+
+    &:not(:disabled) {
+      cursor: pointer;
+    }
+
+    &:first-of-type {
+      transform: rotate(90deg);
+      margin-right: em(12, 12);
+
+      @include mq(breakPointD) {
+        margin-left: em(8, 12);
+      }
+    }
+
+    &:disabled /deep/ .icon svg path {
+      fill: rgba(0,0,0, .4);
+    }
+
+    /deep/ .icon {
+      width: em(18, 12);
+
+      @include mq(breakPointD) {
+        width: em(14, 12);
+      }
+    }
+  }
+}

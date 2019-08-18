@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  breakpoints: [375, 768, 1024, 1440],
+  iconsBasePath: 'assets/icons/'
 };
 
 /*

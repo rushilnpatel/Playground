@@ -1,0 +1,117 @@
+@import "core";
+
+:host {
+  font-size: em(16);
+  display: flex;
+  flex-direction: column;
+  background: $gray1;
+  padding: em(10);
+
+  &.date-picker {
+    position: relative;
+    width: em(388);
+    border-radius: em(6);
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5);
+    margin-top: em(10);
+  }
+
+  .calendar {
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      padding: em(5) 0 em(15) em(10);
+      user-select: none;
+
+      &-month-year {
+        color: $white;
+        font-weight: bold;
+      }
+
+      button {
+        background: none;
+        border: none;
+        outline: none;
+        transform: rotate(-90deg);
+
+        &:not(:disabled) {
+          cursor: pointer;
+        }
+
+        &:first-of-type {
+          transform: rotate(90deg);
+          margin-right: em(12);
+        }
+
+        &:disabled /deep/ .icon svg path {
+          fill: rgba(0,0,0, .4);
+        }
+
+        /deep/ .icon {
+          width: em(18);
+        }
+      }
+    }
+
+    &-content {
+      flex-grow: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      &-day-of-week,
+      &-day {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: percentage(1/7);
+        font-size: em(14);
+        user-select: none;
+        padding: 0;
+      }
+
+      &-day {
+        height: em(50, 14);
+      }
+
+      &-day:not(div) {
+        border: 0;
+        outline: none;
+        background: none;
+        cursor: pointer;
+        color: $white;
+        font-weight: 500;
+
+        &.selected {
+          color: $blue7;
+          font-weight: bold;
+          background: $blue3;
+        }
+
+        &.between {
+          background: $gray2;
+        }
+
+        &:disabled {
+          cursor: default;
+          opacity: .3;
+        }
+      }
+
+      &-day-not-in-month {
+        opacity: .3;
+      }
+
+      &-selected-day {
+        color: blue;
+      }
+    }
+
+    &-reset-button {
+      text-decoration: none;
+      text-transform: capitalize;
+      font-weight: bold;
+      text-align: right;
+      color: $white;
+    }
+  }
+}

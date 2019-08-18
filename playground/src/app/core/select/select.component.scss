@@ -1,0 +1,69 @@
+@import "core";
+
+:host {
+  font-size: em(16);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  height: 100%;
+  position: relative;
+  padding: 0 em(24);
+
+  &.open {
+    .select-panel {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .select-trigger .icon-arrow-down {
+      transform: rotate(180deg);
+    }
+  }
+
+  .select {
+    &-trigger {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      cursor: pointer;
+      user-select: none;
+
+      &-header {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        color: $white;
+
+        sup, sub {
+          font-size: em(13);
+        }
+
+        sub {
+          font-weight: bold;
+          bottom: 0;
+          margin-right: em(10);
+        }
+      }
+
+      .icon-arrow-down {
+        width: em(12);
+        height: em(12);
+        transition: transform 0.5s ease;
+      }
+    }
+
+    &-panel {
+      display: block;
+      opacity: 0;
+      pointer-events: none;
+      background: $blue2;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      left: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+  }
+}

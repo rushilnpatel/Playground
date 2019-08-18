@@ -1,0 +1,55 @@
+@import 'core';
+
+:host {
+  font-size: em(16);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  background: $blue2;
+  border-radius: em(5);
+
+  //todo: use padding vars
+  .accordion {
+    &-header {
+      position: relative;
+      background: $blue7;
+      padding: em(15) em(50) em(15) em(20);
+      border-top-left-radius: em(5);
+      border-top-right-radius: em(5);
+
+      @include mq (breakPointD) {
+        padding: em(15) em(60) em(15) em(20);
+      }
+
+      &-btn {
+        height: 100%;
+        position: absolute;
+        top: em(0);
+        right: em(22);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        transition: transform 0.5s ease-in-out;
+        transform: rotate(180deg);
+
+        @include mq (breakPointD) {
+          right: em(30);
+        }
+
+        &__is-expanded {
+          transform: rotate(360deg);
+        }
+
+        .icon {
+          width: em(16);
+        }
+      }
+    }
+
+    &-subheader,
+    &-body {
+      padding: em(15) em(20) em(30);
+    }
+  }
+}

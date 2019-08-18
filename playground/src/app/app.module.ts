@@ -7,19 +7,20 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { MaterialModule } from './material.module';
 import { AgGridModule } from 'ag-grid-angular';
+import { SideNavModule } from './side-nav/side-nav.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SideNavComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    AgGridModule.withComponents([])
+    // MaterialModule, // load this on deamnd with the module so that performance gets increase
+    AgGridModule.withComponents([]),
+    SideNavModule
   ],
   providers: [],
   exports: [MaterialModule],

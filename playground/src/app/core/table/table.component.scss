@@ -1,0 +1,70 @@
+@import "core";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  //margin: 0 auto;
+
+  @include mq(breakPointD) {
+    font-size: em(14);
+    display: table;
+    width: 100%;
+    border-radius: em(6);
+    border-collapse: collapse;
+    background: $blue2;
+    overflow: hidden;
+
+    &.scrollable {
+      display: block;
+      overflow-x: scroll;
+    }
+  }
+
+  &.even {
+    .table-cell {
+      &:nth-last-of-type(2) {
+        border-bottom: em(1, 12) solid rgba($white, .1);
+        margin-bottom: em(12, 12);
+      }
+    }
+  }
+
+  .table {
+    &-wrapper {
+      display: table;
+
+      &-scrollable {
+        display: block;
+      }
+
+      &:last-of-type {
+        overflow-x: scroll;
+        width: 100%;
+
+        @supports (-webkit-overflow-scrolling: touch) {
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+    }
+
+    &-header {
+      display: none;
+
+      @include mq(breakPointD) {
+        display: table-row;
+      }
+
+      .table-cell {
+        font-size: em(14);
+        height: em(50, 14);
+        vertical-align: middle;
+        white-space: nowrap;
+
+        @include mq(breakPointD) {
+          font-weight: 600;
+          background: $blue4;
+        }
+      }
+    }
+  }
+}

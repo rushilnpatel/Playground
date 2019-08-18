@@ -1,0 +1,11 @@
+@import "core";
+
+:host {
+  display: none;
+  position: absolute;
+
+  &.open {
+    display: flex;
+    flex-direction: column;
+  }
+}
