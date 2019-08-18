@@ -1,0 +1,31 @@
+@import "core";
+
+:host {
+  font-size: em(12);
+  color: $white;
+  border-radius: em(20, 12);
+  padding: em(6, 12) em(18, 12);
+  margin: 0 em(10, 12) em(5, 12) 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: $blue8;
+  white-space: pre;
+
+  @include mq(breakPointD) {
+    display: flex;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-left: em(12, 12);
+    cursor: pointer;
+  }
+
+  /deep/ .icon {
+    background: transparent;
+    width: em(14, 12);
+  }
+}

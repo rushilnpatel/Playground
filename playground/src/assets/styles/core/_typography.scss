@@ -1,0 +1,8 @@
+// using Roboto as material is using it and open sans for the tables
+// more info https://material.io/design/typography/the-type-system.html#type-scale
+
+//this import has been moved to angular.json > styles
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300,400,500');
+
+$font-roboto: 'Roboto', sans-serif;
+$font-openSans: 'Open Sans', sans-serif;

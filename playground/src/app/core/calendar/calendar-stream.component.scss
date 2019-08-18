@@ -1,0 +1,138 @@
+@import "core";
+
+:host {
+  font-size: em(16);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $gray1;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: $blue7;
+    flex-shrink: 0; // Needed for Safari
+
+    button {
+      font-size: em(16);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: em(5) em(10) em(5) em(5);
+      outline: none;
+
+      .icon {
+        width: em(12);
+      }
+    }
+
+    .days-of-week-container {
+      display: flex;
+      justify-content: space-around;
+      font-size: em(14);
+      font-weight: 600;
+      padding: em(5, 14) em(10, 14) em(10, 14) em(10, 14);
+      color: $white;
+      width: 100%;
+    }
+  }
+
+  .content {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    /deep/ {
+      .calendar {
+        &-header-month-year {
+          font-size: em(24);
+        }
+      }
+    }
+  }
+
+  footer {
+    background: $blue7;
+    -webkit-user-drag: none;
+    padding: em(15);
+
+    .user-selection {
+      display: flex;
+      flex-grow: 1;
+      color: $gray3;
+      padding-bottom: em(15);
+      margin-bottom: em(15);
+      border-bottom: 1px solid rgba($white, .2);
+
+      &-date {
+        width: 50%;
+        font-weight: bold;
+
+        &:nth-child(2) { // If is not a range we hide this and we don't need the left border
+          border-left: 1px solid rgba($white, .2);
+          padding-left: em(15);
+        }
+
+        label {
+          display: block;
+          font-size: em(11);
+          margin-bottom: em(5);
+        }
+
+        p {
+          font-size: em(14);
+          text-transform: uppercase;
+
+          &.with-selection {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+
+      &-reset,
+      &-select-date {
+        width: calc(50% - #{em(5)});
+        color: $white;
+        border: none;
+        cursor: pointer;
+        font-size: em(14);
+        font-weight: 600;
+        text-align: center;
+        border-radius: em(4, 14);
+        padding: em(10, 14) 0;
+        outline: none;
+      }
+
+      &-reset {
+        background: transparent;
+        border: 2px solid $white;
+        text-transform: capitalize;
+      }
+
+      &-select-date {
+        background: $orange1;
+        text-transform: uppercase;
+
+        &-grow {
+          flex-grow: 1;
+        }
+
+        &:disabled {
+          background: $gray1;
+          color: rgba($white, .2);
+          cursor: default;
+        }
+      }
+    }
+  }
+}

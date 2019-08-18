@@ -1,0 +1,5 @@
+<div class="content-wrapper">
+  <wfc-icon *ngIf="text && icon" icon="{{icon}}"></wfc-icon>
+  <h2>{{text}}</h2>
+  <button *ngIf="showCTA && text && ctaText" class="button" (click)="handleButtonClick()">{{ctaText}}</button>
+</div>

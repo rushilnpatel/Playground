@@ -1,0 +1,8 @@
+<a (click)="handleClick($event)" href="#" [menuTriggerFor]="menuActions">
+  <wfc-icon icon="icon-action"></wfc-icon>
+</a>
+
+<div wfc-menu #menuActions class="action-menu"
+     [items]="menuUserItems"
+     [parentElementToFit]="parentElement"
+     (itemClicked)="handleMenuItemClick($event)"></div>

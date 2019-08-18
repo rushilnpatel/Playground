@@ -1,0 +1,14 @@
+<header class="accordion-header">
+  <ng-content select="[accordion-header]"></ng-content>
+  <a class="accordion-header-btn" [ngClass]="{'accordion-header-btn__is-expanded' : !isExpanded}" *ngIf="isCollapsible">
+    <wfc-icon icon="icon-arrow-down" (click)="expandedClick()"></wfc-icon>
+  </a>
+</header>
+
+<section class="accordion-subheader">
+  <ng-content select="[accordion-subHeader]"></ng-content>
+</section>
+
+<section class="accordion-body" *ngIf="isExpanded">
+  <ng-content select="[accordion-body]"></ng-content>
+</section>

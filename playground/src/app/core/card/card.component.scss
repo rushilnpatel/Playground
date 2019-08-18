@@ -1,0 +1,59 @@
+@import "core";
+
+:host {
+  font-size: em(16);
+
+  /deep/ {
+    [header], [body] {
+      display: flex;
+      color: $white;
+    }
+
+    [header] {
+      font-size: em(16);
+      font-weight: bold;
+      text-transform: capitalize;
+      background: $blue4;
+      align-items: center;
+      border-radius: em(6) em(6) 0 0;
+      height: em(50);
+      padding: 0 em($spacing-mobile * 2);
+      display: flex;
+      justify-content: flex-start;
+
+      @include mq(breakPointD) {
+        min-height: em(60);
+      }
+
+      .header {
+        &-title {
+          @include mq(breakPointD) {
+            font-size: em(16);
+          }
+        }
+
+        &-sub-title {
+          font-size: em(12);
+          font-weight: 600;
+          margin-left: em(3, 12);
+          line-height: em(17, 12);
+          flex: 1;
+        }
+      }
+    }
+
+    [body] {
+      background: $blue8;
+      border-radius: 0 0 em(6) em(6);
+      padding: em($spacing-mobile * 2);
+      min-height: em(94);
+      display: flex;
+      overflow: hidden;
+
+      @include mq(breakPointD) {
+        min-height: em(100)
+      }
+    }
+  }
+}
+

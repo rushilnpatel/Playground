@@ -1,0 +1,66 @@
+@import "core";
+
+:host {
+  font-size: em(16);
+  position: relative;
+
+  .checkbox {
+
+    &-label {
+      font-size: em(14);
+      position: relative;
+      line-height: em(18, 14);
+      display: block;
+      color: $white;
+      margin: em(7, 14) 0;
+      padding-left: em(30, 14);
+      user-select: none;
+      cursor: pointer;
+    }
+
+    &-input {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: em(1);
+      margin: em(-1);
+      overflow: hidden;
+      position: absolute;
+      text-transform: none;
+      width: em(1);
+
+      // When the checkbox is checked, add a blue background
+      &:checked ~.checkbox-checkmark {
+        background: $blue3;
+        border: 0;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: em(18);
+          height: em(21);
+          background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE4IDE0Ij4KICAgIDxwYXRoIGZpbGw9IiMwMDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTYgMTAuN0wxLjggNi41LjQgNy45IDYgMTMuNWwxMi0xMkwxNi42LjF6Ii8+Cjwvc3ZnPgo=) no-repeat;
+          background-size: em(11) em(10);
+          background-position: em(4) em(5);
+        }
+      }
+    }
+
+    &-checkmark {
+      position: absolute;
+      left: 0;
+      top: em(2);
+      height: em(18);
+      width: em(18);
+      border: em(2) solid $white;
+      border-radius: em(3);
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+    }
+  }
+}
