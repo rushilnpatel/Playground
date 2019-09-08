@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { SideNav } from './sidenav';
 
 @Component({
   selector: 'app-side-nav',
@@ -7,7 +8,7 @@ import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 })
 export class SideNavComponent implements OnInit, OnDestroy {
 
-  fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
+  fillerNav: SideNav[];
 
   fillerContent = ['Just Contetnt '];
 
@@ -17,6 +18,16 @@ export class SideNavComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
   }
-ngOnInit() {
-}
+
+  ngOnInit() {
+    this.getRoute();
+  }
+
+  private getRoute() {
+    this.fillerNav = [
+      { label: 'Home', route: 'Home' },
+      { label: 'About Us', route: 'About US' },
+      { label: 'Contact Us', route: 'Contact Us' }
+    ];
+  }
 }
