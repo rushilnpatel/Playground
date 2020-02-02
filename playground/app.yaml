@@ -1,8 +1,16 @@
-runtime: python27
+image: node:latest
 
-handlers:
-- url: /
-  static_files: playgound/index.html
-  upload: playgound/index.html
-- url: /
-  static_dir: playground
+cache: 
+  paths: 
+    - node_modules/
+
+stages:
+  - deploy
+  environment:
+    name: develop
+  script:
+    - npm install
+    - npm run build
+    - npm run deploy
+  only: 
+    - master

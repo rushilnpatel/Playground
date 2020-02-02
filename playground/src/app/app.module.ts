@@ -8,6 +8,12 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { MaterialModule } from './material.module';
 import { AgGridModule } from 'ag-grid-angular';
 
+// Firebase Setup
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from 'src/environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +25,8 @@ import { AgGridModule } from 'ag-grid-angular';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([]),
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   exports: [MaterialModule],
