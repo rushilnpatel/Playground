@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="118px" height="118px" viewBox="0 0 118 118" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/alert/error_outline_24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M64.1666667,87.5 L75.8333333,87.5 L75.8333333,99.1666667 L64.1666667,99.1666667 L64.1666667,87.5 Z M64.1666667,40.8333333 L75.8333333,40.8333333 L75.8333333,75.8333333 L64.1666667,75.8333333 L64.1666667,40.8333333 Z M69.9416667,11.6666667 C37.7416667,11.6666667 11.6666667,37.8 11.6666667,70 C11.6666667,102.2 37.7416667,128.333333 69.9416667,128.333333 C102.2,128.333333 128.333333,102.2 128.333333,70 C128.333333,37.8 102.2,11.6666667 69.9416667,11.6666667 Z M70,116.666667 C44.2166667,116.666667 23.3333333,95.7833333 23.3333333,70 C23.3333333,44.2166667 44.2166667,23.3333333 70,23.3333333 C95.7833333,23.3333333 116.666667,44.2166667 116.666667,70 C116.666667,95.7833333 95.7833333,116.666667 70,116.666667 Z" id="path-1"></path>
+    </defs>
+    <g id="Access-Denied" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="AccessDeniedPage" transform="translate(-661.000000, -399.000000)">
+            <g id="Group-2" transform="translate(447.000000, 388.000000)">
+                <g id="icon/alert/error_outline_24px" transform="translate(203.000000, 0.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g fill-rule="nonzero"></g>
+                    <g id="✱-/-Color-/-Icons-/-Selected-/-On-Primary-/-Active-" mask="url(#mask-2)" fill="#FFFFFF" fill-rule="evenodd">
+                        <rect id="Rectangle-3" x="0" y="0" width="140" height="140"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,54 @@
+@import "core";
+
+:host {
+  font-size: em(16);
+  padding: em(10);
+
+  &:not(:last-of-type) {
+    border-bottom: em(1) solid rgba($white, .1);
+  }
+
+  .filter {
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: em(10) em(20) em(10) em(10);
+
+      &-title {
+        color: $white;
+        text-transform: uppercase;
+        font-size: em(14);
+      }
+
+      &-button {
+        text-decoration: none;
+        font-size: em(12);
+        font-weight: 600;
+        white-space: nowrap;
+
+        .icon {
+          width: em(14);
+          cursor:pointer;
+        }
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      padding: 0 em(10) em(15) em(10);
+
+      /deep/ {
+        label {
+          font-size: em(14);
+          line-height: em(18, 14);
+          display: block;
+          color: $white;
+          margin: em(7, 14) 0;
+        }
+      }
+    }
+  }
+}

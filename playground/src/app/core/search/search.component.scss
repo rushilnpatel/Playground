@@ -1,0 +1,90 @@
+@import "core";
+
+:host {
+  font-size: em(16);
+  display: flex;
+  position: relative;
+  padding: 0 0 em(3) 0;
+  margin: 0 0 0 em(10);
+  border-bottom: em(2) solid rgba($white, .1);
+  height: em(32.3);
+  box-sizing: border-box;
+
+  @include mq(breakPointD) {
+    width: em(237);
+  }
+
+  @include mq(breakPointE) {
+    height: em(36.9);
+  }
+
+  &.focus {
+    border-bottom: em(2) solid $white;
+
+    .search {
+      &-btn /deep/ wfc-icon {
+        opacity: 1;
+      }
+
+      &-input {
+        color: $white;
+      }
+    }
+  }
+
+  &.open .search-input {
+    display: block;
+  }
+
+  .search {
+    &-btn {
+      font-size: em(16);
+      background: none;
+      border: none;
+      outline: none;
+      position: absolute;
+      width: em(40);
+      left: 0;
+      top: 0;
+
+      @include mq(breakPointD) {
+        left: em(-10);
+      }
+
+      @include mq(breakPointE) {
+        left: em(-4);
+        top: em(2);
+      }
+
+      /deep/ wfc-icon {
+        width: em(20);
+        opacity: .4;
+      }
+    }
+
+    &-input {
+      font-size: em(11);
+      font-weight: 300;
+      height: 100%;
+      color: $white;
+      flex: 1;
+      display: block;
+      background: transparent;
+      border: none;
+      padding: 0 em(20, 11) 0 em(40, 11);
+
+      &::placeholder {
+        color: rgba($white, .4);
+      }
+
+      @include mq(breakPointD) {
+        padding: 0 em(20, 11) 0 em(25, 11);
+      }
+
+      @include mq(breakPointE) {
+        font-size: em(14);
+        padding: 0 em(20, 14) 0 em(32, 14);
+      }
+    }
+  }
+}

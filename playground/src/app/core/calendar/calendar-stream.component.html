@@ -1,0 +1,44 @@
+<header #header>
+  <button (click)="handleCloseClick()">
+    <wfc-icon icon="icon-close"></wfc-icon>
+  </button>
+  <div class="days-of-week-container">
+    <div class="days-of-week"
+         *ngFor="let d of 7 | fill; let i = index;">{{addDayFromCurrentDate(i) | date:'EEEEE'}}</div>
+  </div>
+</header>
+<div #content class="content">
+  <wfc-calendar *ngFor="let y of getAmountOfMonths() | fill; let i = index;"
+                class="calendar"
+                [date]="addMonthFromCurrentDate(i)"
+                [showNavigationButtons]="false"
+                [showDaysOfWeek]="false"
+                [showOtherMonthDays]="false"
+                [showOtherMonthEmptyWeek]="false"
+                [selectedDate]="selectedDate"
+                [minDate]="minDate"
+                [maxDate]="maxDate"
+                (dateSelected)="handleDateSelected($event)"></wfc-calendar>
+</div>
+<footer draggable="false">
+  <div class="user-selection">
+    <div class="user-selection-date">
+      <label *ngIf="rangeSelection">From</label>
+      <p
+        [ngClass]="{'with-selection': selectedDate?.date}">{{selectedDate?.date ? (selectedDate?.date | date:'MMM dd yyyy') : 'Select Date'}}</p>
+    </div>
+    <div *ngIf="rangeSelection" class="user-selection-date">
+      <label>To</label>
+      <p
+        [ngClass]="{'with-selection': selectedDate?.dateTo}">{{selectedDate?.dateTo ? (selectedDate?.dateTo | date:'MMM dd yyyy') : 'Select Date'}}</p>
+    </div>
+  </div>
+  <div class="buttons">
+    <button class="buttons-reset" *ngIf="getShowResetButton"
+            (click)="handleResetButtonClick()">{{resetButtonLabel}}</button>
+    <button class="buttons-select-date"
+            [ngClass]="{'buttons-select-date-grow': !getShowResetButton}"
+            [disabled]="rangeSelection ? (!selectedDate?.date || !selectedDate?.dateTo) : !selectedDate?.date"
+            (click)="handleSelectDateButtonClick()">{{selectDateButtonLabel}}</button>
+  </div>
+</footer>

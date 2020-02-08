@@ -1,0 +1,165 @@
+@import "core";
+
+:host {
+  font-size: em(12);
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  font-weight: 600;
+  letter-spacing: em(0.5, 12);
+  margin-bottom: em(12, 12);
+  border-bottom: em(1, 12) solid rgba($white, .1);
+  padding-bottom: em(10, 12);
+  padding-left: em(20, 12);
+  line-height: em(21, 12);
+  color: $white;
+
+  @include mq(breakPointD) {
+    font-size: em(12);
+    line-height: em(16, 12);
+    font-weight: 500;
+    padding: em(15, 12) em(20, 12);
+    width: auto;
+    margin-bottom: 0;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    word-break: break-word;
+
+    a {
+      font-weight: bold;
+    }
+  }
+
+  &:nth-last-of-type(2),
+  &:nth-last-of-type(1) {
+    border: none;
+    margin-bottom: 0;
+
+    @include mq(breakPointD) {
+      border-bottom: em(1, 12) solid rgba($white, .1);
+      vertical-align: auto;
+    }
+  }
+
+  &.table-cell {
+    &-first {
+      font-size: em(22);
+      width: 100%;
+      line-height: em(24, 22);
+      border-bottom: none;
+      padding: 0 em(20, 22);
+      position: relative;
+
+      @include mq(breakPointD) {
+        font-size: em(12);
+        font-weight: 500;
+        line-height: em(16, 12);
+        width: auto;
+        padding: em(10, 12) em(20, 12);
+        border-bottom: em(1, 12) solid rgba($white, .1);
+        background-clip: padding-box !important; // Firefox fix for the bottom border not shown in the first column of a scrollable table
+      }
+
+      .table-cell-label {
+        font-size: em(13, 22);
+      }
+    }
+
+    &-left {
+      @include mq(breakPointD) {
+        text-align: left;
+      }
+    }
+
+    &-right {
+      @include mq(breakPointD) {
+        text-align: right;
+      }
+    }
+  }
+
+  .table-cell {
+    &-label {
+      font-size: em(11, 12);
+      font-weight: bold;
+      line-height: 1.5;
+      color: rgba($white, 0.7);
+
+      @include mq(breakPointD) {
+        display: none;
+      }
+    }
+  }
+
+  // todo: this seems to be in the wrong place
+  .sortable {
+    display: flex;
+    align-items: center;
+    //justify-content: center;
+    height: 100%;
+    cursor: pointer;
+    user-select: none; // To avoid selection of the text when the user does double click
+    color: $white;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    /deep/ {
+      wfc-icon {
+        height: em(12, 12);
+        opacity: .4;
+      }
+    }
+
+    &.ascending,
+    &.descending {
+      /deep/ {
+        wfc-icon {
+          height: em(10, 12);
+          margin-left: em(2, 12);
+          opacity: 1;
+        }
+      }
+    }
+
+    &.ascending .icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+:host-context(.scrollable) {
+
+  &.table-cell-first {
+    @include mq(breakPointD) {
+      width: 1%; // Hack to distribute the columns equally
+    }
+
+    &.table-cell-first-shadow {
+      @include mq(breakPointD) {
+        background: $blue2;
+        will-change: transform;
+      }
+
+      &.table-cell-header {
+        @include mq(breakPointD) {
+          background: $blue4;
+          z-index: 1;
+        }
+      }
+
+      &:after {
+        @include mq(breakPointD) {
+          content: "";
+          display: block;
+          position: absolute;
+          width: em(9);
+          height: 100%;
+          top: 0;
+          right: em(-9);
+          background-image: linear-gradient(to left, rgba($black, 0), $black);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import "core";
+
+:host {
+  font-size: em(16);
+
+  .table-cell-array:not(:last-of-type) {
+    margin-bottom: em(5, 12);
+  }
+}

@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { SideNavComponent } from './side-nav/side-nav.component';
 import { MaterialModule } from './material.module';
 import { AgGridModule } from 'ag-grid-angular';
+import { SideNavModule } from './side-nav/side-nav.module';
 
 // Firebase Setup
 import { AngularFireModule } from 'angularfire2';
@@ -17,16 +17,21 @@ import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SideNavComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+<<<<<<< HEAD
     MaterialModule,
     AgGridModule.withComponents([]),
     AngularFireModule.initializeApp(environment.firebaseConfig)
+=======
+    // MaterialModule, // load this on deamnd with the module so that performance gets increase
+    AgGridModule.withComponents([]),
+    SideNavModule
+>>>>>>> release/1.0
   ],
   providers: [],
   exports: [MaterialModule],

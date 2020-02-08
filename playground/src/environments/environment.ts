@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+<<<<<<< HEAD
   firebaseConfig : {
     apiKey: "AIzaSyCR5Efe9mmC2vtP6964UqF_QUwT2HqEOow",
     authDomain: "patel-rushilkumar-1716695.firebaseapp.com",
@@ -14,6 +15,10 @@ export const environment = {
     appId: "1:840989816709:web:8dff531adf3d90c56ef6ec",
     measurementId: "G-02ET51RP8Y"
   }
+=======
+  breakpoints: [375, 768, 1024, 1440],
+  iconsBasePath: 'assets/icons/'
+>>>>>>> release/1.0
 };
 
 /*
