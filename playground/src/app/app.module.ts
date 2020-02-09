@@ -23,15 +23,9 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-<<<<<<< HEAD
-    MaterialModule,
-    AgGridModule.withComponents([]),
-    AngularFireModule.initializeApp(environment.firebaseConfig)
-=======
     // MaterialModule, // load this on deamnd with the module so that performance gets increase
     AgGridModule.withComponents([]),
     SideNavModule
->>>>>>> release/1.0
   ],
   providers: [],
   exports: [MaterialModule],
