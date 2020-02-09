@@ -1,7 +1,0 @@
-<div class="user-selection-date"
-     [ngClass]="{'with-selection': selectedDate?.date}"
-     (click)="handleDateFromClick()">{{selectedDate?.date ? (selectedDate?.date | date:dateFormat) : rangeSelection ? 'From' : 'Select Date'}}</div>
-
-<div *ngIf="rangeSelection" class="user-selection-date"
-     [ngClass]="{'with-selection': selectedDate?.dateTo}"
-     (click)="handleDateToClick()">{{selectedDate?.dateTo ? (selectedDate?.dateTo | date:dateFormat) : 'To'}}</div>
