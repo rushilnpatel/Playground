@@ -18,7 +18,7 @@ steps:
 - task: Npm@1
   inputs:
     command: 'custom'
-    customCommand: 'set audit false'
+    customCommand: 'audit fix'
 - task: Npm@1
   inputs:
     command: 'install'
