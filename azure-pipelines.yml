@@ -17,6 +17,10 @@ steps:
   displayName: 'Install Node.js'
 - task: Npm@1
   inputs:
+    command: 'custom'
+    customCommand: 'set audit false'
+- task: Npm@1
+  inputs:
     command: 'install'
 - task: Npm@1
   inputs:
