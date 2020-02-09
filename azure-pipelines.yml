@@ -25,5 +25,5 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
+    ArtifactName: '_rushilnpatel.Playground'
     publishLocation: 'Container'
