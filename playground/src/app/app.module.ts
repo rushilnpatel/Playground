@@ -17,15 +17,17 @@ import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { RegisterComponent } from './register/register.component';
+import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AboutusComponent,
-    ContactusComponent,
-    RegisterComponent
+    // HomeComponent,
+    // AboutusComponent,
+    // ContactusComponent,
+    // RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -35,8 +37,11 @@ import { RegisterComponent } from './register/register.component';
     // AgGridModule.withComponents([]),
     NavModule
   ],
-  providers: [],
-  exports: [MaterialModule],
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  // exports: [MaterialModule],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
