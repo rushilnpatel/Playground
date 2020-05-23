@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { Nav } from './nav';
 
 @Component({
@@ -12,7 +13,7 @@ export class NavComponent implements OnInit {
 
   fillerContent = ['Just Contetnt '];
 
-  constructor(changeDetectorRef: ChangeDetectorRef) {
+  constructor(changeDetectorRef: ChangeDetectorRef, private router: Router) {
 
   }
 
@@ -25,10 +26,14 @@ export class NavComponent implements OnInit {
 
   private getRoute() {
     this.fillerNav = [
-      { label: 'Home', route: 'Home' },
-      { label: 'About Us', route: 'About US' },
-      { label: 'Contact Us', route: 'Contact Us' }
+      { label: 'Home', route: 'home' },
+      { label: 'About Us', route: 'aboutus' },
+      { label: 'Contact Us', route: 'contactus' }
     ];
+  }
+  public navigateRoute(route) {
+    console.log(`route`, route)
+    this.router.navigate([route]);
   }
 
 }

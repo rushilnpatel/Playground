@@ -8,7 +8,7 @@
 
         <div class="menu-items">
             <div class="lhs-items">
-                <button mat-button *ngFor="let nav of fillerNav">{{nav.label}}</button>
+                <button mat-button *ngFor="let nav of fillerNav" (click)="navigateRoute(nav.route)">{{nav.label}}</button>
             </div>
 
             <div class="rhs-items">
@@ -21,13 +21,12 @@
     <mat-sidenav-container class="example-sidenav-container">
         <mat-sidenav #snav [mode]="'over'" fixedTopGap="56">
             <mat-nav-list>
-                <a mat-list-item *ngFor="let nav of fillerNav">{{nav.label}}</a>
+                <a mat-list-item *ngFor="let nav of fillerNav" [routerLink]="nav.route">{{nav.label}}</a>
             </mat-nav-list>
         </mat-sidenav>
 
         <mat-sidenav-content>
-            <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
-            <!-- <router-outlet></router-outlet> -->
+            <router-outlet></router-outlet>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>
