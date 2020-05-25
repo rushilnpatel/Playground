@@ -1,12 +1,16 @@
 <p>register works!</p>
-<mat-form-field class="example-full-width" appearance="fill">
+
+<form [formGroup]="registerFormGroup">
+  value: {{ registerFormGroup.value | json }}
+
+  <mat-form-field>
     <mat-label>First name</mat-label>
-    <input matInput placeholder="Enter">
+    <input matInput placeholder="Enter" formControlName="firstName"/>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field>
     <mat-label>Input</mat-label>
-    <input matInput>
+    <input matInput />
   </mat-form-field>
   <mat-slide-toggle>Slide Toggle</mat-slide-toggle>
-  
+</form>

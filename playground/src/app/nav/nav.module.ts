@@ -7,6 +7,7 @@ import { HomeComponent } from '../home/home.component';
 import { AboutusComponent } from '../aboutus/aboutus.component';
 import { ContactusComponent } from '../contactus/contactus.component';
 import { RegisterComponent } from '../register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,6 +19,7 @@ import { RegisterComponent } from '../register/register.component';
     RegisterComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     MaterialModule,
     NavRoutingModule
   ],

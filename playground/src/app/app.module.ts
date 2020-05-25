@@ -17,9 +17,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { RegisterComponent } from './register/register.component';
-import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,12 +32,10 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     // MaterialModule, // load this on deamnd with the module so that performance gets increase
     // AgGridModule.withComponents([]),
     NavModule
-  ],
-  providers: [
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   // exports: [MaterialModule],
