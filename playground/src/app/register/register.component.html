@@ -1,16 +1,47 @@
 <p>register works!</p>
 
 <form [formGroup]="registerFormGroup">
-  value: {{ registerFormGroup.value | json }}
+  <!-- value: {{ registerFormGroup.value | json }} -->
 
-  <mat-form-field>
+  <mat-form-field style="width: 60%">
     <mat-label>First name</mat-label>
-    <input matInput placeholder="Enter" formControlName="firstName"/>
+    <input matInput placeholder="Alex" formControlName="firstName"/>
+    <!-- <mat-error *ngIf="firstName.errors">qqq</mat-error> -->
   </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Input</mat-label>
-    <input matInput />
+  <mat-form-field style="width: 60%">
+    <mat-label>Last name</mat-label>
+    <input matInput placeholder="Scott" formControlName="lastName"/>
   </mat-form-field>
-  <mat-slide-toggle>Slide Toggle</mat-slide-toggle>
+
+  <mat-form-field style="width: 60%">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="abc@mnc.com" formControlName="email"/>
+  </mat-form-field>
+
+  <mat-form-field style="width: 60%;">
+    <input matInput type="password" placeholder="password" formControlName="password" autocomplete="new-password">
+
+    <mat-hint align="left">Must have one letter, and one number</mat-hint>
+    <mat-error *ngIf="!registerFormGroup.get('password').valid" class="has-text-danger">
+        That password sucks...
+    </mat-error>
+
+</mat-form-field>
+
+  <mat-slide-toggle style="width: 100%;" formControlName="sendCatalog">Send Catalog</mat-slide-toggle>
+
+  <mat-form-field style="width: 40%;">
+    <mat-label>Address</mat-label>
+    <mat-select formControlName="address">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let a of address" [value]="a.value">
+        {{a.label}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  
 </form>
+<button mat-raised-button (click)="clicked()">Test patch</button>
+value: {{ registerFormGroup.value | json }}
