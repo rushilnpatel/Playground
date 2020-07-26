@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormArray, FormGroup } from '@angular/forms';
 
@@ -21,12 +21,12 @@ address = [
 
   ngOnInit(): void {
     this.registerFormGroup = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: null,
-      email : null,
-      password: [null, Validators.required],
+      firstName: ['', [Validators.required, Validators.minLength(2)]],
+      lastName: [null, [Validators.required]],
+      email : [null, [Validators.required]],
+      password: [null, [Validators.required]],
       sendCatalog: true,
-      address: ['']
+      address: [null]
     })
   }
   clicked() {
@@ -47,6 +47,17 @@ address = [
 
    const x =  this.registerFormGroup.get('password');
    console.log('x', x)
+  }
+
+  sliderOnChange(event) {
+    console.log('Slider Changed', event);
+    const addressControl = this.registerFormGroup.get('address');
+    if(event.checked) {
+      addressControl.setValidators(Validators.required);
+    } else {
+      addressControl.clearValidators();
+    }
+    addressControl.updateValueAndValidity();
   }
 
 }
